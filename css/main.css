@@ -1,0 +1,59 @@
+body {
+    cursor: url('../img/cursor/cursor/cursor_default.cur'), auto;
+}
+
+.contenedorNumeros {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    
+}
+
+.numeros {
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #04343c;
+
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.displayNumero {
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #04343c;
+
+    
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.botonDeRoll {
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #04343c;
+
+    
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.displayApuesta {
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #04343c;
+
+    
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+
+}
