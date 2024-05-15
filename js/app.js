@@ -6,7 +6,11 @@ const displayTextoApuesta = document.querySelector(".displayApuesta")
 
 displayTextoApuesta.style.visibility = 'hidden';
 
+var botoneraEsconder = document.querySelectorAll("#cero, #uno, #dos, #tres, #cuatro, #cinco, #seis, #siete, #ocho, #nueve")
+
+
 // CONSTANTES DEL JUEGO
+
 const unoDeathroll = 1
 
 const botonDeRoll = document.querySelector("#roll")
@@ -15,7 +19,9 @@ let numeroApuesta = ""
 
 // display.document.
 
-document.addEventListener('click', (e) => {
+// BOTONERA MUY COMPLEJA
+
+document.addEventListener("click", (e) => {
 
     if(e.target.id === "roll"){
 
@@ -32,11 +38,13 @@ document.addEventListener('click', (e) => {
             }
             if(numeroRoleado === 1) {
 
-                botonDeRoll.style.visibility = 'hidden';
+                botonDeRoll.style.visibility = "hidden";
 
-                displayTextoApuesta.style.visibility = 'visible';
+                displayTextoApuesta.style.visibility = "visible";
                 
                 displayTextoApuesta.textContent = "Dead"
+
+                botoneraEsconder.forEach(e => e.style.visibility = "hidden")
             
             }
 
@@ -45,7 +53,7 @@ document.addEventListener('click', (e) => {
 
     // const display = +(numeroIngresado.join(''));
 
-    if(e.target.id === "0"){
+    if(e.target.id === "cero"){
         // console.log(0)
         numeroIngresado.push("0")
 
@@ -60,7 +68,7 @@ document.addEventListener('click', (e) => {
         numeroApuesta = display
 
     };
-    if(e.target.id === "1"){
+    if(e.target.id === "uno"){
         // console.log(1)
         numeroIngresado.push("1");
 
@@ -75,7 +83,7 @@ document.addEventListener('click', (e) => {
         numeroApuesta = display
     
     };
-    if(e.target.id === "2"){
+    if(e.target.id === "dos"){
         // console.log("2")
         numeroIngresado.push("2");
 
@@ -90,7 +98,7 @@ document.addEventListener('click', (e) => {
         numeroApuesta = display
 
     };
-    if(e.target.id === "3"){
+    if(e.target.id === "tres"){
         // console.log("3")
         numeroIngresado.push("3");
 
@@ -105,7 +113,7 @@ document.addEventListener('click', (e) => {
         numeroApuesta = display
 
     };
-    if(e.target.id === "4"){
+    if(e.target.id === "cuatro"){
         // console.log("4")
         numeroIngresado.push("4");
 
@@ -120,7 +128,7 @@ document.addEventListener('click', (e) => {
         numeroApuesta = display
 
     };
-    if(e.target.id === "5"){
+    if(e.target.id === "cinco"){
         // console.log("5")
         numeroIngresado.push("5");
 
@@ -135,7 +143,7 @@ document.addEventListener('click', (e) => {
         numeroApuesta = display
 
     };
-    if(e.target.id === "6"){
+    if(e.target.id === "seis"){
         // console.log("6")
         numeroIngresado.push("6");
 
@@ -150,7 +158,7 @@ document.addEventListener('click', (e) => {
         numeroApuesta = display
 
     };
-    if(e.target.id === "7"){
+    if(e.target.id === "siete"){
         // console.log("7")
         numeroIngresado.push("7");
 
@@ -165,7 +173,7 @@ document.addEventListener('click', (e) => {
         numeroApuesta = display
 
     };
-    if(e.target.id === "8"){
+    if(e.target.id === "ocho"){
         // console.log("8")
         numeroIngresado.push("8");
 
@@ -180,7 +188,7 @@ document.addEventListener('click', (e) => {
         numeroApuesta = display
 
     };
-    if(e.target.id === "9"){
+    if(e.target.id === "nueve"){
         // console.log("9")
         numeroIngresado.push("9");
 
@@ -197,7 +205,7 @@ document.addEventListener('click', (e) => {
   
     };
 
-    if(e.target.id === "X"){
+    if(e.target.id === "x"){
         numeroIngresado.length = 0
 
         console.log(numeroIngresado)
@@ -214,9 +222,14 @@ document.addEventListener('click', (e) => {
 
         displayTextoApuesta.style.visibility = 'hidden';
 
+        botoneraEsconder.forEach(e => e.style.visibility = "visible")
+
 
 
 
     };
 });
+
+// FALTA:
+    //Limpiar Array Original y Deshabilitar la botonera
 
