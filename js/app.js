@@ -25,6 +25,8 @@ document.addEventListener("click", (e) => {
 
     if(e.target.id === "roll"){
 
+        botoneraEsconder.forEach(e => e.style.visibility = "hidden")
+
         const numeroRoleado = Math.floor(Math.random() * (numeroApuesta - unoDeathroll) + unoDeathroll);
                    
             displayTexto.textContent = numeroRoleado
