@@ -4,6 +4,8 @@ const displayTexto = document.querySelector(".displayNumero")
 
 const displayTextoApuesta = document.querySelector(".displayApuesta")
 
+displayTextoApuesta.style.visibility = 'hidden';
+
 // CONSTANTES DEL JUEGO
 const unoDeathroll = 1
 
@@ -29,8 +31,12 @@ document.addEventListener('click', (e) => {
             
             }
             if(numeroRoleado === 1) {
+
+                botonDeRoll.style.visibility = 'hidden';
+
+                displayTextoApuesta.style.visibility = 'visible';
                 
-                displayTexto.textContent = "PERDISTE"
+                displayTextoApuesta.textContent = "Dead"
             
             }
 
@@ -203,6 +209,12 @@ document.addEventListener('click', (e) => {
         displayTexto.textContent = display
 
         numeroApuesta = display
+
+        botonDeRoll.style.visibility = 'visible';
+
+        displayTextoApuesta.style.visibility = 'hidden';
+
+
 
 
     };
