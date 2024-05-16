@@ -62,6 +62,9 @@ document.addEventListener("click", (e) => {
             }
             if(numeroRoleado === 0) {
                 botondeX.style.visibility = "visible"
+
+                displayTexto.textContent ="/"
+
             }
 
             
@@ -249,6 +252,8 @@ document.addEventListener("click", (e) => {
 // FALTA:
     //Resolver cajita de numeros moviendo la grid
     // que se derrame la apuesta
+    //cuando apreto roll sin un valor la caja dice 0
+
 
 
 
