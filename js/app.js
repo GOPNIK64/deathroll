@@ -10,6 +10,9 @@ const botoneraEsconder = document.querySelectorAll("#cero, #uno, #dos, #tres, #c
 
 const botondeX = document.querySelector("#x")
 
+botondeX.style.visibility = "hidden"
+
+
 
 // CONSTANTES DEL JUEGO
 
@@ -19,7 +22,9 @@ const botonDeRoll = document.querySelector("#roll")
 
 let numeroApuesta = ""
 
-// display.document.
+//
+
+botonDeRoll.style.visibility = "hidden"
 
 // BOTONERA MUY COMPLEJA
 document.addEventListener("click", (e) => {
@@ -53,7 +58,9 @@ document.addEventListener("click", (e) => {
 
                 botoneraEsconder.forEach(e => e.style.visibility = "hidden")
 
-                botondeX.style.visibility = "visible" 
+                botondeX.style.visibility = "visible"
+                
+                botondeX.textContent = "Reset?"
             
             }
             if(numeroRoleado !== 0) {
@@ -61,7 +68,7 @@ document.addEventListener("click", (e) => {
                 
             }
             if(numeroRoleado === 0) {
-                botondeX.style.visibility = "visible"
+                // botondeX.style.visibility = "visible"
 
                 displayTexto.textContent ="/"
 
@@ -86,6 +93,17 @@ document.addEventListener("click", (e) => {
 
         numeroApuesta = display
 
+        botondeX.style.visibility = "visible"
+
+        if(display === 0) {
+            
+            displayTexto.textContent ="/"
+
+            botondeX.style.visibility = "hidden"
+
+        };
+        
+
     };
     if(e.target.id === "uno"){
         // console.log(1)
@@ -100,6 +118,10 @@ document.addEventListener("click", (e) => {
         displayTexto.textContent = display
         
         numeroApuesta = display
+
+        botondeX.style.visibility = "visible"
+
+        botonDeRoll.style.visibility = "visible"
     
     };
     if(e.target.id === "dos"){
@@ -116,6 +138,10 @@ document.addEventListener("click", (e) => {
 
         numeroApuesta = display
 
+        botondeX.style.visibility = "visible"
+
+        botonDeRoll.style.visibility = "visible"
+
     };
     if(e.target.id === "tres"){
         // console.log("3")
@@ -130,6 +156,10 @@ document.addEventListener("click", (e) => {
         displayTexto.textContent = display
 
         numeroApuesta = display
+
+        botondeX.style.visibility = "visible"
+
+        botonDeRoll.style.visibility = "visible"
 
     };
     if(e.target.id === "cuatro"){
@@ -146,6 +176,10 @@ document.addEventListener("click", (e) => {
 
         numeroApuesta = display
 
+        botondeX.style.visibility = "visible"
+
+        botonDeRoll.style.visibility = "visible"
+
     };
     if(e.target.id === "cinco"){
         // console.log("5")
@@ -160,6 +194,10 @@ document.addEventListener("click", (e) => {
         displayTexto.textContent = display
 
         numeroApuesta = display
+
+        botondeX.style.visibility = "visible"
+
+        botonDeRoll.style.visibility = "visible"
 
     };
     if(e.target.id === "seis"){
@@ -176,6 +214,10 @@ document.addEventListener("click", (e) => {
 
         numeroApuesta = display
 
+        botondeX.style.visibility = "visible"
+
+        botonDeRoll.style.visibility = "visible"
+
     };
     if(e.target.id === "siete"){
         // console.log("7")
@@ -190,6 +232,10 @@ document.addEventListener("click", (e) => {
         displayTexto.textContent = display
 
         numeroApuesta = display
+
+        botondeX.style.visibility = "visible"
+
+        botonDeRoll.style.visibility = "visible"
 
     };
     if(e.target.id === "ocho"){
@@ -206,6 +252,10 @@ document.addEventListener("click", (e) => {
 
         numeroApuesta = display
 
+        botondeX.style.visibility = "visible"
+
+        botonDeRoll.style.visibility = "visible"
+
     };
     if(e.target.id === "nueve"){
         // console.log("9")
@@ -221,10 +271,17 @@ document.addEventListener("click", (e) => {
 
         numeroApuesta = display
 
+        botondeX.style.visibility = "visible"
+
+        botonDeRoll.style.visibility = "visible"
+
   
     };
 
     if(e.target.id === "x"){
+
+        botondeX.textContent = "X"
+
         numeroIngresado.length = 0
 
         console.log(numeroIngresado)
@@ -243,7 +300,16 @@ document.addEventListener("click", (e) => {
 
         botoneraEsconder.forEach(e => e.style.visibility = "visible")
 
+        botondeX.style.visibility = "hidden"
 
+        botonDeRoll.style.visibility = "hidden"
+        
+        if(display === 0) {
+            
+            displayTexto.textContent ="/"
+
+
+        };
 
 
     };
@@ -253,7 +319,7 @@ document.addEventListener("click", (e) => {
     //Resolver cajita de numeros moviendo la grid
     // que se derrame la apuesta
     //cuando apreto roll sin un valor la caja dice 0
-
+    // que roll arranque hidden
 
 
 
