@@ -6,7 +6,9 @@ const displayTextoApuesta = document.querySelector(".displayApuesta")
 
 displayTextoApuesta.style.visibility = 'hidden';
 
-var botoneraEsconder = document.querySelectorAll("#cero, #uno, #dos, #tres, #cuatro, #cinco, #seis, #siete, #ocho, #nueve")
+const botoneraEsconder = document.querySelectorAll("#cero, #uno, #dos, #tres, #cuatro, #cinco, #seis, #siete, #ocho, #nueve")
+
+const botondeX = document.querySelector("#x")
 
 
 // CONSTANTES DEL JUEGO
@@ -20,12 +22,13 @@ let numeroApuesta = ""
 // display.document.
 
 // BOTONERA MUY COMPLEJA
-
 document.addEventListener("click", (e) => {
 
     if(e.target.id === "roll"){
 
-        botoneraEsconder.forEach(e => e.style.visibility = "hidden")
+        botondeX.style.visibility = "hidden"
+
+        
 
         const numeroRoleado = Math.floor(Math.random() * (numeroApuesta - unoDeathroll) + unoDeathroll);
                    
@@ -35,6 +38,8 @@ document.addEventListener("click", (e) => {
             if(numeroRoleado > 1){
     
                 numeroApuesta = numeroRoleado
+
+                
             
             
             }
@@ -47,7 +52,16 @@ document.addEventListener("click", (e) => {
                 displayTextoApuesta.textContent = "Dead"
 
                 botoneraEsconder.forEach(e => e.style.visibility = "hidden")
+
+                botondeX.style.visibility = "visible" 
             
+            }
+            if(numeroRoleado !== 0) {
+                botoneraEsconder.forEach(e => e.style.visibility = "hidden")
+                
+            }
+            if(numeroRoleado === 0) {
+                botondeX.style.visibility = "visible"
             }
 
             
@@ -233,5 +247,9 @@ document.addEventListener("click", (e) => {
 });
 
 // FALTA:
-    //Limpiar Array Original y Deshabilitar la botonera
+    //Resolver cajita de numeros moviendo la grid
+    // que se derrame la apuesta
+
+
+
 
