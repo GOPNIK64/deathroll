@@ -12,8 +12,6 @@ const botondeX = document.querySelector("#x")
 
 botondeX.style.visibility = "hidden"
 
-
-
 // CONSTANTES DEL JUEGO
 
 const unoDeathroll = 1
@@ -35,7 +33,7 @@ document.addEventListener("click", (e) => {
 
         
 
-        const numeroRoleado = Math.floor(Math.random() * (numeroApuesta - unoDeathroll) + unoDeathroll);
+        const numeroRoleado = Math.floor(Math.random() * (numeroApuesta - unoDeathroll + 1) + unoDeathroll);
                    
             displayTexto.textContent = numeroRoleado
     
